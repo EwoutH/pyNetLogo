@@ -10,10 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        netlogo-version: ["6.2.2", "6.3.0"]
 
     steps:
     - uses: actions/checkout@v3
@@ -21,5 +17,5 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: "3.9"
-    - run: pip install nose coverage coveralls jpype1 numpy pandas scipy
-    - run: nosetests
+    - run: pip install nose coverage jpype1 numpy pandas
+    - run: nosetests --with-coverage --verbose --cover-package=pyNetLogo
