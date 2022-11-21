@@ -12,7 +12,7 @@ try:
     import unittest.mock as mock
 except ImportError:
     import mock
-import pyNetLogo.pyNetLogo as pyNetLogo
+import pyNetLogo
 
 
 class Test(unittest.TestCase):
