@@ -17,7 +17,7 @@ import pyNetLogo
 
 class Test(unittest.TestCase):
 
-    @mock.patch('pyNetLogo.pyNetLogo.os')
+    @mock.patch('pyNetLogo.os')
     def test_find_netlogo(self, mocked_os):
         mocked_os.path.abspath.return_value = '/Applications'
         mocked_os.listdir.return_value = ['Netlogo 5.1.1', 'Netlogo 5.3.0',
